@@ -1,0 +1,115 @@
+body{
+    background-color: black;
+    overflow: hidden;
+}
+
+
+/* Pedaço escuro da tela */
+main::after{
+    content:'';
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-height: 100vh;
+    width: 80vw;
+
+    background: linear-gradient(-233deg, #000 40%, rgba(0, 0, 0, 0) 70%) no-repeat;
+}
+
+/* Fazer sumir todos os personagens */
+main .personagem{
+    display: none;
+    height: 100vh;
+}
+
+/* Fazer aparecer o luffy */
+main .personagem.selecionado{
+    display: block;
+}
+
+/* Imagem de todos os personagens */
+.personagem .imagem{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+main .conteudo{
+    position: absolute;
+    top: 0;
+    left: 120px;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100vh;  
+    max-width: 380px;
+    z-index: 1;
+    
+}
+
+.conteudo .nome-personagem{
+    color: azure;
+    font-size: 48px;
+    font-family: 'Secular One';
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+
+.conteudo .descricao{
+    color: rgb(255, 255, 255);
+    max-width: 100%;
+    min-width: 13em;
+    font-family: 'Rubik';
+    text-align: justify;
+    font-size: 1.1rem;
+    line-height: 1.5rem;
+}
+
+/* Logo do One Piece */
+.conteudo .logo{
+    background-image: url('../imagens/one-piece-logo.png');
+    background-size: cover;
+    width: 240px;
+    height: 100px;
+    margin-bottom: 50px;
+}
+
+
+/* Botões Laterais */
+
+.botoes{
+    position: fixed;
+    top: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 168px;
+    gap: 1rem;
+    background: rgb(0, 0, 0,0.3);
+}
+
+.botoes .botao{
+    border: none;
+    background: #000000;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.botoes .botao:hover{
+    transform: scale(1.1);
+    box-shadow: 0 0 10px #d9d9d9;
+}
+
+.botoes .botao img{
+    border-radius: 50%;
+}
+
+.botoes .botao.selecionado{
+    transform: scale(1.2);
+    box-shadow: 0 0 10px #d9d9d9;
+    border-radius: 50%;
+}
